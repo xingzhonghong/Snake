@@ -28,7 +28,7 @@ public class Panel extends JPanel {
 
         // 墙
         g.setColor(Color.BLACK);
-        g.drawRect(10, 10, 800, 600);
+        g.drawRect(10, 10, 600, 400);
         Point food=game.map.getFood();
         // 食物
         g.setColor(Color.RED);

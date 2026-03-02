@@ -5,12 +5,12 @@ public class SnakeBody {
     private List<Point> body;
     private Direction currentDir;
     private int moveInterval;
-    public Snake()
+    public SnakeBody()
     {
         body=new ArrayList<>();
-        body.add(new Point(10,16));
-        body.add(new Point(10,15));
-        body.add(new Point(10,14));
+        body.add(new Point(15,10));
+        body.add(new Point(15,9));
+        body.add(new Point(15,8));
         currentDir=Direction.RIGHT;
         moveInterval=200;
     }

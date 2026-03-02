@@ -45,7 +45,7 @@ public class SnakeGame implements ActionListener {
        }
        private void checkCollision() {
            Point head = snake.getBody().get(0);
-           if (head.x < 1 || head.x >= 40 || head.y < 1 || head.y >= 30) {
+           if (head.x < 1 || head.x >= 20 || head.y < 1 || head.y >= 30) {
                isRunning = false;
            }
            for (int i = 1; i < snake.getBody().size(); i++) {
