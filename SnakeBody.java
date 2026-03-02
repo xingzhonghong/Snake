@@ -51,16 +51,16 @@ public class SnakeBody {
         switch(currentDir)
         {
             case UP:
-                newX++;
+                newY++;
                 break;
                 case DOWN:
-                    newX--;
+                    newY--;
                     break;
                     case LEFT:
-                        newY--;
+                        newX--;
                         break;
                         case RIGHT:
-                            newY++;
+                            newX++;
                             break;
         }
         Point newHead=new Point(newX,newY);
@@ -75,16 +75,16 @@ public class SnakeBody {
         switch(currentDir)
         {
             case UP:
-                newX++;
-                break;
-            case DOWN:
-                newX--;
-                break;
-            case LEFT:
                 newY--;
                 break;
-            case RIGHT:
+            case DOWN:
                 newY++;
+                break;
+            case LEFT:
+                newX--;
+                break;
+            case RIGHT:
+                newX++;
                 break;
         }
         Point newHead=new Point(newX,newY);

@@ -9,9 +9,13 @@ public class Map {
      private Random random;
      public Map()
      {
-         this snake=snake;
+         this.snake=snake;
          this.random=new Random();
          generateFood();
+     }
+     public Map(SnakeBody snake)
+     {
+         this.snake=snake;
      }
      public void generateFood()
      {
@@ -51,7 +55,7 @@ public class Map {
      }
      public Point getFood()
      {
-         return food;
+         return new Point(food.x, food.y);
      }
      public boolean isEatingFood()
      {
