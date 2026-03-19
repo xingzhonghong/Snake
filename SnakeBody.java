@@ -12,7 +12,7 @@ public class SnakeBody {
         body.add(new Point(15,9));
         body.add(new Point(15,8));
         currentDir=Direction.RIGHT;
-        moveInterval=200;
+        moveInterval=425;
     }
     public List<Point> getBody() {
         return body;
@@ -51,10 +51,10 @@ public class SnakeBody {
         switch(currentDir)
         {
             case UP:
-                newY++;
+                newY--;
                 break;
                 case DOWN:
-                    newY--;
+                    newY++;
                     break;
                     case LEFT:
                         newX--;

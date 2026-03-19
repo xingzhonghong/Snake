@@ -2,28 +2,24 @@ package com.snake;
 import java.util.Random;
 
 public class Map {
-     private static final int ROWS=20;
-     private static final int COLS=30;
      private Point food;
      private SnakeBody snake;
-     private Random random;
      public Map(SnakeBody snake)
      {
          this.snake=snake;
-         this.random=new Random();
          generateFood();
      }
      public void generateFood()
      {
+         boolean isOnSnake=false;
          int retryCount=0;
          boolean valid=false;
-         int x=0;
-         int y=0;
-         while(retryCount<5&&!valid)
+         int x=0,y=0;
+         do
          {
-             x=random.nextInt(ROWS)+1;
-             y=random.nextInt(COLS)+1;
-             boolean isOnSnake=false;
+             x=(int)(Math.random()*20)+1;
+             y=(int)(Math.random()*13)+1;
+             isOnSnake=false;
              for(Point p:snake.getBody())
              {
                  if(p.x==x&&p.y==y)
@@ -35,23 +31,20 @@ public class Map {
              if(!isOnSnake)
              {
                  valid=true;
+                 food=new Point(x,y);
              }
              else{
                  retryCount++;
              }
-         }
-         if(valid)
+         }while(!valid&&retryCount<100);
+         if(!valid)
          {
-             food=new Point(x, y);
-         }
-         else
-         {
-             throw new GameEndException("恭喜通关，地图已无空位");
+             //throw new GameEndException("恭喜通关，地图已无空位");
+             food=new Point(x,y);
          }
      }
      public Point getFood()
      {
-         return new Point(food.x, food.y);
+     return new Point(food.x,food.y);
      }
-
 }
